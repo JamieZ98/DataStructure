@@ -1,6 +1,6 @@
 // SetOperation.cpp
-#include <iostream>
 #include "LinkList.h"
+#include <iostream>
 
 using namespace std;
 
@@ -9,25 +9,25 @@ void print(const char &c)
 	cout << c << " ";
 }
 
-//Ê¹ÓÃÏßĞÔ±íÊµÏÖ¼¯ºÏÔËËã£¨A-B£©U(B-A),¼´ÕÒ³öÁ½¸ö¼¯ºÏÖĞËùÓĞ²»Í¬ÔªËØ
+//ä½¿ç”¨çº¿æ€§è¡¨å®ç°é›†åˆè¿ç®—ï¼ˆA-Bï¼‰U(B-A),å³æ‰¾å‡ºä¸¤ä¸ªé›†åˆä¸­æ‰€æœ‰ä¸åŒå…ƒç´ 
 void Difference(LinkList<char> &la, LinkList<char> &lb)
 {
 	int i, lblen;
 	lblen = lb.Length();
-	//ÖğÒ»¶ÁÈëB±íÊı¾İµ½A±í²éÕÒ£¬Èô´æÔÚÔò´ÓA±íÉ¾³ı£¬·ñÔò£¬²åÈëµ½A±í
+	//é€ä¸€è¯»å…¥Bè¡¨æ•°æ®åˆ°Aè¡¨æŸ¥æ‰¾ï¼Œè‹¥å­˜åœ¨åˆ™ä»Aè¡¨åˆ é™¤ï¼Œå¦åˆ™ï¼Œæ’å…¥åˆ°Aè¡¨
 	for (i = 1; i <= lblen; i++)
 	{
 		char e;
-		lb.GetElem(e, i); //µ¥Á´±íÖĞÈ¡ÖµĞ§ÂÊ½ÏË³Ğò±íµÍ£¬o(n)
+		lb.GetElem(e, i); //å•é“¾è¡¨ä¸­å–å€¼æ•ˆç‡è¾ƒé¡ºåºè¡¨ä½ï¼Œo(n)
 		int k = la.LocateElem(e);
 		if (k)
-			la.Delete(e, k); //o£¨1£©
+			la.Delete(e, k); //oï¼ˆ1ï¼‰
 		else
-			la.Append(e); //Î²²å£¬o£¨1£©
+			la.Append(e); //å°¾æ’ï¼Œoï¼ˆ1ï¼‰
 	}
 }
 
-//½¨Á¢ÒÔÏßĞÔ±í´æ´¢±íÊ¾µÄ¼¯ºÏ
+//å»ºç«‹ä»¥çº¿æ€§è¡¨å­˜å‚¨è¡¨ç¤ºçš„é›†åˆ
 void Create(LinkList<char> &la, const int &k)
 {
 	char e;
@@ -41,23 +41,23 @@ void Create(LinkList<char> &la, const int &k)
 int main()
 {
 	int n, m;
-	cout << "---´Ë³ÌĞòÊµÏÖ¼¯ºÏÔËËã(A-B)¡È(B-A)---" << endl;
-	cout << "ÇëÊäÈë¼¯ºÏAÖĞÔªËØ¸öÊı£º" << endl;
+	cout << "---æ­¤ç¨‹åºå®ç°é›†åˆè¿ç®—(A-B)âˆª(B-A)---" << endl;
+	cout << "è¯·è¾“å…¥é›†åˆAä¸­å…ƒç´ ä¸ªæ•°ï¼š" << endl;
 	cin >> n;
-	cout << "ÇëÊäÈë¼¯ºÏBÖĞÔªËØ¸öÊı£º" << endl;
+	cout << "è¯·è¾“å…¥é›†åˆBä¸­å…ƒç´ ä¸ªæ•°ï¼š" << endl;
 	cin >> m;
 
-	cout << "½âÌâÄ£°åÊÇµ¥Á´±íÀà£¬Êı¾İÔªËØÀàĞÍÊÇ×Ö·ûĞÍ" << endl
+	cout << "è§£é¢˜æ¨¡æ¿æ˜¯å•é“¾è¡¨ç±»ï¼Œæ•°æ®å…ƒç´ ç±»å‹æ˜¯å­—ç¬¦å‹" << endl
 		 << endl;
 	LinkList<char> lal, lbl;
-	cout << "ÇëÊäÈë" << n << "¸öÊı¾İÔªËØÖÁ¼¯ºÏA" << endl;
+	cout << "è¯·è¾“å…¥" << n << "ä¸ªæ•°æ®å…ƒç´ è‡³é›†åˆA" << endl;
 	Create(lal, n);
-	cout << "ÇëÊäÈë" << m << "¸öÊı¾İÔªËØÖÁ¼¯ºÏA" << endl;
+	cout << "è¯·è¾“å…¥" << m << "ä¸ªæ•°æ®å…ƒç´ è‡³é›†åˆA" << endl;
 	Create(lbl, m);
 
 	Difference(lal, lbl);
 
-	cout << "ÔËËãºóµÄ¼¯ºÏAÊÇ£º" << endl;
+	cout << "è¿ç®—åçš„é›†åˆAæ˜¯ï¼š" << endl;
 	lal.Traverse(print);
 	cout << endl
 		 << endl;

@@ -36,7 +36,7 @@ LinkList<ElemType>::LinkList()
 {
 	len = 0;
 	head = tail = new ListNode<ElemType>;
-	head->next = NULL;
+	head->next = nullptr;
 }
 
 template<class ElemType>
@@ -65,7 +65,7 @@ void LinkList<ElemType>::Clear()
 		p = q;
 	}
 	tail = head;
-	head->next = NULL;
+	head->next = nullptr;
 	len = 0;
 }
 
@@ -170,7 +170,7 @@ bool LinkList<ElemType>::Append(const ElemType& e)
 	q->data = e;
 	tail->next = q;
 	tail = q;
-	tail->next = NULL;
+	tail->next = nullptr;
 	++len;
 	return true;
 }
@@ -214,7 +214,7 @@ void LinkList<ElemType>::CopyFrom(const LinkList<ElemType>& r)
 {
 	len = 0;
 	head = tail = new ListNode<ElemType>;
-	head->next = NULL;
+	head->next = nullptr;
 	ListNode<ElemType>* p = r.head->next;
 	while (p)
 	{

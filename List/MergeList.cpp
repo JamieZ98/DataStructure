@@ -1,17 +1,17 @@
 //MergeList.cpp
-#include <iostream>
 #include "List.h"
 #include "Sqlist.h"
+#include <iostream>
 
 using namespace std;
 
-//½¨Á¢ÏßÐÔ±í
+//å»ºç«‹çº¿æ€§è¡¨
 void Creat(List<int> *lx, int k, char c)
 {
 	int e;
 	if (k > 0)
 	{
-		cout << "ÇëË³ÐòÊäÈë" << k << "¸ö" << c << "±íÖÐµÄÊý¾Ý£º" << endl;
+		cout << "è¯·é¡ºåºè¾“å…¥" << k << "ä¸ª" << c << "è¡¨ä¸­çš„æ•°æ®ï¼š" << endl;
 		for (int i = 0; i < k; i++)
 		{
 			cin >> e;
@@ -66,12 +66,12 @@ int main()
 	void MergeList(List<int> *, List<int> *, List<int> *);
 	void Create(List<int> *, int, char);
 	int n, m;
-	cout << "---´Ë³ÌÐòÓÃÓÚºÏ²¢Á½¸öÓÐÐò±í---" << endl;
-	cout << "ÇëÊäÈëÓÐÐò±íAµÄ³¤¶È: ";
+	cout << "---æ­¤ç¨‹åºç”¨äºŽåˆå¹¶ä¸¤ä¸ªæœ‰åºè¡¨---" << endl;
+	cout << "è¯·è¾“å…¥æœ‰åºè¡¨Açš„é•¿åº¦: ";
 	cin >> n;
-	cout << "ÇëÊäÈëÓÐÐò±íBµÄ³¤¶È: ";
+	cout << "è¯·è¾“å…¥æœ‰åºè¡¨Bçš„é•¿åº¦: ";
 	cin >> m;
-	cout << "³éÏóÀàÄ£°åÁ¬½ÓµÄ¾ßÌåÀàÊÇµ¥Á´±íÀàÄ£°å£¬Êý¾ÝÔªËØÊÇÕûÐÍ" << endl
+	cout << "æŠ½è±¡ç±»æ¨¡æ¿è¿žæŽ¥çš„å…·ä½“ç±»æ˜¯å•é“¾è¡¨ç±»æ¨¡æ¿ï¼Œæ•°æ®å…ƒç´ æ˜¯æ•´åž‹" << endl
 		 << endl;
 	SqList<int> lal(n), lbl(m), lcl(n + m);
 	Creat(&lal, n, 'A');
@@ -79,8 +79,9 @@ int main()
 	Creat(&lbl, m, 'B');
 	cout << endl;
 	MergeList(&lal, &lbl, &lcl);
-	cout << "ºÏ²¢ºóµÄc±íÎª£º" << endl;
+	cout << "åˆå¹¶åŽçš„cè¡¨ä¸ºï¼š" << endl;
 	lcl.Traverse(Print);
+
 	system("pause");
 	return 0;
 }
